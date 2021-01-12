@@ -1,0 +1,14 @@
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+
+hystrix:
+  command:
+    mycmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+      circuitBreaker:
+        requestVolumeThreshold: 3
+        sleepWindowInMilliseconds: 10000
